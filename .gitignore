@@ -1,0 +1,27 @@
+# Node
+node_modules/
+dist/
+build/
+.next/
+
+# Java
+target/
+*.class
+
+# Rust
+target/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+env/
+.ipynb_checkpoints/
+
+# General
+.vscode/
+.idea/
+*.log
+.env
+.DS_Store
+Thumbs.db
