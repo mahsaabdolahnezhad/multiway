@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+  python-service:
+    build: ./python-service
+    ports:
+      - "8001:8001"
+    networks:
+      - multiway-net
+
+  java-service:
+    build: ./java-service
+    ports:
+      - "8081:8081"
+    networks:
+      - multiway-net
+    depends_on:
+      - python-service
+
+  rust-service:
+    build: ./rust-service
+    ports:
+      - "8002:8002"
+    networks:
+      - multiway-net
+    depends_on:
+      - java-service
+
+networks:
+  multiway-net:
+    driver: bridge
